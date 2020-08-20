@@ -1,26 +1,45 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Main from './Component/Main/Main';
+import Axios from 'axios';
+import ProductCard from './Component/ProductCard/ProductCard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardData: null
+    }
+  }
+  componentDidMount() {
+    Axios.get('/cardInfo.json').then(response => this.setState({cardData: response.data}))
+  }
+
+  render() {
+    const cards = this.state.cardData ? this.state.cardData.cardData.map(
+      item => <ProductCard 
+      key={item.id}
+      id={item.id}
+      description={this.state.cardData.description}
+      isClickDescription={this.state.cardData.isClickDescription}
+      linkDescription={this.state.cardData.linkDescription}
+      name={this.state.cardData.name}
+      isClickDecriptionLink={item.isClickDecriptionLink}
+      composition={item.composition}
+      serveCount={item.serveCount}
+      bonus={item.bonus}
+      weight={item.weight}
+      measure={item.measure}
+      adventure={item.adventure}
+      count={item.count}
+      />
+    ) : ' ';
+    return(
+      <Main cards={cards} title={this.state.cardData ? this.state.cardData.title : ''} />
+    )
+
+  }
 }
 
 export default App;

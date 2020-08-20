@@ -1,0 +1,41 @@
+{
+    "title": "Ты покормил кота сегодня?",
+    "description": "Сказочное заморское яство",
+    "isClickDescription": "Котэ не одобряет?",
+    "linkDescription": "Чего сидишь? Порадуй котэ,",
+    "name": "Нямушка",
+    "cardData": [ 
+        {
+            "id": 0, 
+            "isClickDecriptionLink": "Печень утки разварная с артишоками.",
+            "composition": "с фуа-гра", 
+            "serveCount": 10, 
+            "bonus": "мышь в подарок",
+            "weight": "0,5",
+            "measure": "кг",
+            "adventure": false,
+            "count": 23
+        },
+        {
+            "id": 1, 
+            "isClickDecriptionLink": "Головы щучьи с чесноком да свежайшая сёмгушка.",
+            "composition": "с рыбой", 
+            "serveCount": 40, 
+            "bonus": "2 мыши в подарок",
+            "weight": "2",
+            "measure": "кг",
+            "adventure": false,
+            "count": 14
+        },
+        {
+            "id": 2, 
+            "composition": "с курой", 
+            "serveCount": 100, 
+            "bonus": "5 мышей в подарок",
+            "weight": "5",
+            "measure": "кг",
+            "adventure": "заказчик доволен",
+            "count": 0
+        }
+    ]
+}

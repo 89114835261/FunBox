@@ -1,0 +1,191 @@
+$bc: #1698d9;
+$bch: #2ea8e6;
+@import './../Style/_gradient';
+@import './../Style/media';
+
+A { 
+    color: $bc;
+    &:link {color: $bc; text-decoration: none; border-bottom: dashed 1px $bc;}
+    &:hover {color: $bch; text-decoration: none; border-bottom: dashed 1px $bch;}
+    &:visited {color: $bc;}
+    &:active {color: $bc;}
+}
+
+.wrapper {
+    height: 520px;
+    margin: 0 0 0 80px;
+    width: 320px;
+    @include _1050() {
+        &:last-child {
+            margin: 20px 0 0 0;
+        }
+    @include _768() {
+        margin: 0 0 0 20px;
+    }
+    @include _700() {
+        margin: 0;
+    }
+    }
+    position: relative;
+    &:first-child {
+        margin: 0;
+    }
+    &:nth-child(2) {
+        margin: 0;
+    }
+    .link {
+        display: block;
+        padding: 10px 0 0 0;
+        color: #fff;
+        text-align: center;
+        font-size: 13px;
+        SPAN {
+            color: #ffff66;
+        }
+    }
+}
+
+.card {
+    z-index: 2;
+    width: 320px;
+    height: 480px;
+    position: relative;
+    @include gradient($bc 94.7%, transparent 5.3%, -45deg);
+
+    border-radius: 0 10px 10px 10px;
+    &:hover {
+        cursor: pointer;
+        @include gradient($bch 94.7%, transparent 5.3%, -45deg);
+        .weight {
+            background-color: $bch;
+        }
+        .header {
+            SPAN {
+                border-color: $bch;  
+            }
+        }
+    }
+}
+
+.card.disabled {
+    @include gradient(#b3b3b3 94.7%, transparent 5.3%, -45deg);
+    pointer-events: none;
+    color: #b3b3b3;
+    .header {
+        SPAN {
+            border-color: #b3b3b3;  
+            P{
+                color: #d4d4d4
+            }
+        }
+    }
+    .content {
+        .weight {
+            background-color: #8b8b8b;
+        }
+    }
+}
+
+
+.card.additional {
+    @include gradient(#d91667 94.7%, transparent 5.3%, -45deg);
+    .header {
+        SPAN {
+            border-color: #d91667;  
+        }
+    }
+    .content {
+        .weight {
+            background-color: #d91667;
+        }
+    }
+}
+
+.header {
+    height: 45px;
+    .corner {
+        border-bottom: 45px solid #fff; 
+        border-left: 45px solid transparent;	
+        width: 0;
+        height: 0;
+        float: left;
+        margin: 0 0 0 4px;
+    }
+    SPAN {
+        display: block;
+        float: left;
+        margin: 0;
+        height: 45px;
+        background-color: #fff;
+        position: absolute;
+        left: 45px;
+        border-right: solid 4px $bc;
+        border-top: solid 4px $bc;  
+        border-radius: 0 10px 0 0;
+        right: 0;
+        color: #666666;
+        padding: 0 0 0 10px;
+        text-align: bottom;
+    }
+}
+
+.isDisabled {
+    position: absolute;
+    background-image: url('./../../img/opacityBG.png');
+    top: 45px;
+    left: 4px;
+    right: 4px;
+    bottom: 44px;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.content {
+    background-image: url('./../../img/cat.jpg');
+    background-repeat: no-repeat;
+    background-position: -30px 160px;
+    background-color: #fff;
+    width: 264px;
+    border-radius: 0 0 10px 10px;
+    margin: 0 0 0 4px;
+    height: 431px;
+    padding: 0 0 0 48px;
+    H2 {
+        margin: 0;
+        font-size: 48px;
+        padding: 0;
+
+    }
+    H2 span {
+        display: block;
+        font-size: 24px;
+    }
+    .description {
+        padding: 10px 0 0 0;
+        SPAN {
+            display: block;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+    .weight {
+        background-color: $bc;
+        width: 80px;
+        height: 75px;
+        border-radius: 50%;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        font-size: 42px;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0 0 0;
+        .measure {
+            display: block;
+            line-height: 5px;
+            font-size: 21px;
+        }
+    }
+}
